@@ -124,7 +124,7 @@ What does it return?
 
 Determine what the ":" does! Complete the following sentence:
 
-The : means everything in between the two numbers.
+The : outputs everything in between the two numbers, i.e. the list
 
 #### 2
 
@@ -146,10 +146,55 @@ length(x)
 
 length returns number of items.
 
+```{r}
+max(x)
+```
+
+max(x) returns the maximum value in the list
+
+```{r}
+x[x<10]
+```
+
+x\[x\<10\] outputs the elements of x that are less than 10
+
+```{r}
+x^2
+```
+
+x\^2 outputs each value of x squared
+
+```{r}
+x[x<12&x>7]
+```
+
+x\[x\<12&x\>7\] outputs the values of x that are greater than 7 and less
+than 12, i.e. between and not including 7 and 12.
+
+```{r}
+x[7:12]
+```
+
 #### 3
 
 Is `-1:2` the same as `(-1):2` or `-(1:2)`? INSERT AN R CHUNK HERE AND
 RUN EACH OF THESE COMMANDS. Then state what each of these does.
+
+```{r}
+-1:2
+```
+
+```{r}
+(-1):2
+```
+
+```{r}
+-(1:2)
+```
+
+-1:2 is the same as (-1):2 but different than -(1:2). I guess in the
+latter the algebraic rule of distributing the negative throught the
+parentheses applies
 
 ### Data input, plotting, and tests
 
