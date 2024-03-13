@@ -217,12 +217,42 @@ of data is stored in each variable?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
 
+```{r}
+dim(sleep)
+```
+
+The sleep data set has 62 rows and 12 variable columns. The variables
+include species name, body weight, brain weight, sleep time when not
+dreaming, sleep time while dreaming, total sleep time, life span,
+gestation time, how likely to be predated upon while asleep, how exposed
+to danger in sleep, and whether or not they are a primate
+
+```{r}
+str(sleep)
+```
+
 #### 5
 
 Change the column named *BodyWt* to *Body_weight*"\* in the sleep
 dataset.
 
 ADD ANY R CHUNKS YOU USED TO COMPLETE THE TASK.
+
+```{r}
+?colnames
+```
+
+```{r}
+colnames(sleep)[BodyWt]<-"Body_weight"
+```
+
+```{r}
+colnames(sleep)"BodyWt"<-"Body_weight"
+```
+
+```{r}
+colnames(sleep)[2]<-"Body_weight"
+```
 
 #### 6
 
@@ -257,7 +287,51 @@ plot(BodyWt ~ factor(Primate), data = sleep)
 NOTE YOU CAN ADD A PLOT TO THE DOCUMENT TOO! AMEND THE BELOW AS NEEDED.
 
 ```{r}
-plot(cars)
+plot(sleep)
+```
+
+```{r}
+?plot
+```
+
+```{r}
+(plot(primate,TotalSleep))
+```
+
+```{r}
+(plot(Primate,TotalSleep))
+```
+
+```{r}
+plot(factor(Primate), TotalSleep)
+```
+
+```{r}
+plot(~factor(Primate), TotalSleep)
+```
+
+```{r}
+plot(~factor("Primate"), "TotalSleep")
+```
+
+```{r}
+plot(~factor(Primate), "TotalSleep")
+```
+
+```{r}
+colnames(sleep)[2]<-"Body_weight"
+```
+
+```{r}
+plot("Primate", "TotalSleep")
+```
+
+```{r}
+plot("TotalSleep","Primate")
+```
+
+```{r}
+plot(TotalSleep ~ Primate, sleep)
 ```
 
 #### 7
@@ -269,6 +343,45 @@ model to obtain the p-value for the model (hint: summary()). What does
 this imply?
 
 ENTER ANSWERS HERE. ADD ANY R CHUNKS YOU USED TO FIND THE ANSWER.
+
+```{r}
+summary(sleep)
+```
+
+```{r}
+plot("BrainWt","TotalSleep")
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, sleep)
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+```
+
+```{r}
+?lm
+```
+
+```{r}
+sleep_fit <- lm(TotalSleep ~ BrainWt, sleep[sleep$BrainWt<1000,])
+summary(sleep_fit)
+```
+
+```{r}
+
+```
+
+```{r}
+?abline
+```
+
+```{r}
+plot(TotalSleep ~ BrainWt, data = sleep[sleep$BrainWt <  1000, ])
+abline(sleep_fit)
+```
 
 ### EXTRA QUESTIONS
 
